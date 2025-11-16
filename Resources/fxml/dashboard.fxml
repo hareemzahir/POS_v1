@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.pos.controller.DashboardController"
+            prefWidth="800" prefHeight="500"
+            style="-fx-background-color: #141414;">
+
+    <TabPane layoutX="20" layoutY="20" prefWidth="760" prefHeight="460"
+             style="-fx-font-family: 'Urbanist'; -fx-background-color: #fbf8ef; -fx-background-radius: 10;">
+
+        <!-- Dashboard Tab -->
+        <Tab text="Dashboard">
+            <AnchorPane style="-fx-background-color: #fbf8ef;">
+                <!-- Start/End shift buttons -->
+                <Button text="Start Shift" layoutX="20" layoutY="20"
+                        style="-fx-background-color: #c7ff10; -fx-text-fill: #141414; -fx-background-radius: 15px;"/>
+                <Button text="End Shift" layoutX="150" layoutY="20"
+                        style="-fx-background-color: #c7ff10; -fx-text-fill: #141414; -fx-background-radius: 15px;"/>
+
+                <!-- Placeholders for reports & alerts -->
+                <Label text="Time-based Reports Section" layoutX="20" layoutY="80"/>
+                <Label text="Tax and Financial Reports Section" layoutX="20" layoutY="130"/>
+                <Label text="Alerts / Stock Notifications Section" layoutX="20" layoutY="180"/>
+            </AnchorPane>
+        </Tab>
+
+        <!-- Products Tab -->
+        <Tab text="Products">
+            <AnchorPane fx:id="productsAnchor">
+                <fx:include source="products.fxml"/>
+            </AnchorPane>
+        </Tab>
+
+        <!-- Transactions Tab (optional) -->
+        <Tab text="Transactions">
+            <AnchorPane fx:id="transactionAnchor">
+                <fx:include source="transaction.fxml"/>
+            </AnchorPane>
+        </Tab>
+
+    </TabPane>
+</AnchorPane>
